@@ -80,8 +80,8 @@ const PROJECTS = [
     hint: 'Hosts the privacy policy page for the YouG8 Travel Assistant. It is a simple static HTML page. It is referenced from the YouG8 app store listings. It is on GitHub but not served via Pages. The main YouG8 app is linked from this page.' },
   { slug: 'pos-egypt', name: 'PharmaPOS (pos / pos-egypt)', type: 'Web app - Node + Render blueprint', status: 'NOT-DEPLOYED', live: null, repo: 'https://github.com/MAGEGY/pos-egypt',
     hint: 'A pharmacy point-of-sale web application. Both local folders contain the same Render blueprint (service: pharmapos). The blueprint exists but was never deployed - the URL returns 404. The repos are private on GitHub. Deploying is one click via the Render blueprint.' },
-  { slug: 'drugdose', name: 'DrugDose', type: 'Android/Expo scaffold', status: 'EMPTY', live: null, repo: null,
-    hint: 'An Expo project scaffold that was never filled with app code. The screens and context folders are empty. There is nothing to publish yet. The Expo setup with web support is ready for development. Once it has screens, it can be exported to web like the other Expo apps.' },
+  { slug: 'drugdose', name: 'DrugDose', type: 'Web app - Expo + expo-router + Paper', status: 'LIVE', live: 'https://magegy.github.io/DrugDose/', repo: 'https://github.com/MAGEGY/DrugDose',
+    hint: 'A pediatric drug dose calculator. Pick a drug, enter the child\'s weight, and it computes the dose per administration and the daily total. Every result is checked against single-dose and daily maximums with warnings. It includes a searchable reference of 1,071 Egyptian medicines with EGP prices, plus a dose schedule generator. Calculations can be saved to a history list.' },
 ]
 
 const grid = document.getElementById('grid')

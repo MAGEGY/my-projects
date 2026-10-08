@@ -26,24 +26,29 @@
 <div class="container">
   <a class="back" href="../index.html">&larr; Back to all projects</a>
   <div class="card">
-    <h1>DrugDose <span class="badge EMPTY">EMPTY</span></h1>
-    <p class="muted">Android/Expo scaffold &middot; Local project (no repo)</p>
+    <h1>DrugDose <span class="badge LIVE">LIVE</span></h1>
+    <p class="muted">Web app (Expo + expo-router + react-native-paper) &middot; Built from the empty DrugDose scaffold (now functional)</p>
     <p>
-      
-      
+      <a class="btn" href="https://magegy.github.io/DrugDose/" target="_blank">Open live site</a>
+      <a class="btn secondary" href="https://github.com/MAGEGY/DrugDose" target="_blank">GitHub repository</a>
     </p>
     <h2>What it does</h2>
-    <ul><li>DrugDose is an Expo project scaffold that was never filled with app code.</li>
-    <li>The screens and context folders are empty.</li>
-    <li>There is nothing to publish yet.</li>
-    <li>The Expo setup (with web support) is ready whenever development starts.</li>
-    <li>Once it has screens, it can be exported to web the same way as the other Expo apps.</li></ul>
+    <ul><li>DrugDose is a pediatric drug dose calculator.</li>
+    <li>Pick a drug, enter the child's weight, and it computes the dose per administration and the daily total.</li>
+    <li>It checks every result against single-dose and daily maximums and warns when a dose is capped or exceeded.</li>
+    <li>It includes a searchable reference of 1,071 Egyptian medicines with compositions and EGP prices, plus a dose schedule generator for OD/BID/TID/QID and hourly regimens.</li>
+    <li>Calculations can be saved to a history list for later review.</li></ul>
     <h2>Features</h2>
-    <ul><li>Expo scaffold with router entry point configured</li></ul>
+    <ul><li>Weight-based dose calculator with 12 common drug presets (paracetamol, ibuprofen, amoxicillin, azithromycin, and more)</li>
+    <li>Single-dose and daily-maximum safety checks with warnings</li>
+    <li>Searchable medicine reference (fuzzy search, Egyptian market, prices in EGP)</li>
+    <li>Dose schedule generator: OD, BID, TID, QID, every 4/6/8 hours, bedtime</li>
+    <li>Saved dose history (AsyncStorage/localStorage)</li>
+    <li>Expo Router tabs, React Native Paper UI, works on web and Android</li></ul>
     <h2>Tech stack</h2>
-    <p>Expo SDK 54, expo-router</p>
+    <p>Expo SDK 54, expo-router 6, React Native Paper, AsyncStorage, GitHub Pages</p>
     <h2>Notes</h2>
-    <p>No GitHub repository exists yet.</p>
+    <p>The repo also contains the original native Android implementation (Kotlin: DoseCalculator, DrugDatabase, FDA API service). Educational tool - always verify doses against local guidelines.</p>
   </div>
 </div>
 </body>
