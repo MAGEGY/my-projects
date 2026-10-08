@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Help Me Read (Web) - Project Details</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f6f8; color: #222; margin: 0; padding: 24px; }
+  .container { max-width: 820px; margin: 0 auto; }
+  .card { background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); margin-bottom: 16px; }
+  h1 { color: #1a3c5e; margin-top: 0; }
+  h2 { color: #2a5d8f; margin-top: 28px; }
+  .badge { display: inline-block; padding: 4px 12px; border-radius: 12px; font-size: 0.85rem; font-weight: 600; color: #fff; }
+  .badge.LIVE { background: #16a34a; }
+  .badge.GITHUB { background: #64748b; }
+  .badge.NOT-DEPLOYED, .badge.EMPTY { background: #f59e0b; }
+  a { color: #1a73e8; }
+  .btn { display: inline-block; padding: 10px 18px; border-radius: 8px; background: #1a73e8; color: #fff; text-decoration: none; margin: 4px 8px 4px 0; }
+  .btn.secondary { background: #475569; }
+  ul { line-height: 1.8; }
+  .muted { color: #64748b; }
+  .back { margin-bottom: 16px; display: inline-block; }
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">&larr; Back to all projects</a>
+  <div class="card">
+    <h1>Help Me Read (Web) <span class="badge LIVE">LIVE</span></h1>
+    <p class="muted">Web app (React + Vite + Tesseract.js) &middot; Web rewrite of the HelpMeRead Android app</p>
+    <p>
+      <a class="btn" href="https://magegy.github.io/helpmeread-web/" target="_blank">Open live site</a>
+      <a class="btn secondary" href="https://github.com/MAGEGY/helpmeread-web" target="_blank">GitHub repository</a>
+    </p>
+    <h2>What it does</h2>
+    <ul><li>Help Me Read is a web app for people who cannot read text - illiterate, visually impaired, or foreign-language speakers.</li>
+    <li>You point your camera at any text or upload a photo, and it recognizes the words with OCR.</li>
+    <li>The app then reads the text out loud, and you can tap any line to hear just that line.</li>
+    <li>It can also translate the text into 15 languages, including Arabic, and read the translation aloud too.</li>
+    <li>Everything you scan is saved in a history list so you can open and hear it again later.</li></ul>
+    <h2>Features</h2>
+    <ul><li>Camera capture or image upload with OCR (Tesseract.js, CDN-loaded)</li>
+    <li>15 OCR languages: English, Arabic, French, Spanish, German, Hindi, Chinese, Japanese, Korean, Russian, Italian, Portuguese, Turkish, Urdu, Bengali</li>
+    <li>Read-aloud via the browser Speech Synthesis API with speed and volume sliders</li>
+    <li>Tap-to-read: every recognized line is a clickable block</li>
+    <li>Translation via the free MyMemory API, with read-aloud of the translation</li>
+    <li>History (last 50 scans) stored in localStorage</li>
+    <li>Accessibility-first design: large fonts and big buttons</li></ul>
+    <h2>Tech stack</h2>
+    <p>React 19, Vite 8, TypeScript, Tesseract.js 5.1.0 (CDN), Web Speech API, MyMemory API, GitHub Pages</p>
+    <h2>Notes</h2>
+    <p>Camera access requires HTTPS - the GitHub Pages URL qualifies. The first scan in each language downloads a ~10-15 MB OCR model, cached afterwards.</p>
+  </div>
+</div>
+</body>
+</html>

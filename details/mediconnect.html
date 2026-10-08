@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MediConnect (Web) - Project Details</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f6f8; color: #222; margin: 0; padding: 24px; }
+  .container { max-width: 820px; margin: 0 auto; }
+  .card { background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); margin-bottom: 16px; }
+  h1 { color: #1a3c5e; margin-top: 0; }
+  h2 { color: #2a5d8f; margin-top: 28px; }
+  .badge { display: inline-block; padding: 4px 12px; border-radius: 12px; font-size: 0.85rem; font-weight: 600; color: #fff; }
+  .badge.LIVE { background: #16a34a; }
+  .badge.GITHUB { background: #64748b; }
+  .badge.NOT-DEPLOYED, .badge.EMPTY { background: #f59e0b; }
+  a { color: #1a73e8; }
+  .btn { display: inline-block; padding: 10px 18px; border-radius: 8px; background: #1a73e8; color: #fff; text-decoration: none; margin: 4px 8px 4px 0; }
+  .btn.secondary { background: #475569; }
+  ul { line-height: 1.8; }
+  .muted { color: #64748b; }
+  .back { margin-bottom: 16px; display: inline-block; }
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">&larr; Back to all projects</a>
+  <div class="card">
+    <h1>MediConnect (Web) <span class="badge LIVE">LIVE</span></h1>
+    <p class="muted">Web app (Expo static export) &middot; Web export of the MediConnect Expo app</p>
+    <p>
+      <a class="btn" href="https://magegy.github.io/mediconnect/" target="_blank">Open live site</a>
+      <a class="btn secondary" href="https://github.com/MAGEGY/mediconnect" target="_blank">GitHub repository</a>
+    </p>
+    <h2>What it does</h2>
+    <ul><li>MediConnect is a medical app with three roles: doctor, patient, and pharmacist.</li>
+    <li>Doctors manage patients and create prescriptions, patients view medications and lifestyle plans, pharmacists dispense and track inventory.</li>
+    <li>The web version is a static export of the Expo (React Native) app, so it runs in the browser with no server.</li>
+    <li>It includes medicine scanning screens and a built-in medicine database.</li>
+    <li>The Android app remains the full version with camera and biometric login.</li></ul>
+    <h2>Features</h2>
+    <ul><li>Doctor, patient, and pharmacist navigators</li>
+    <li>Prescription creation and dispensing screens</li>
+    <li>Medicine database and scanning screens</li>
+    <li>Internationalization (English/Arabic locales)</li>
+    <li>Static export - no backend required for the web build</li></ul>
+    <h2>Tech stack</h2>
+    <p>Expo (React Native), React Native Web, i18next, GitHub Pages</p>
+    <h2>Notes</h2>
+    <p>Some device-only features (camera scanning, biometrics) are limited in the browser export.</p>
+  </div>
+</div>
+</body>
+</html>

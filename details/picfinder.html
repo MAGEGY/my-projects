@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PicToID (picfinder) - Project Details</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f6f8; color: #222; margin: 0; padding: 24px; }
+  .container { max-width: 820px; margin: 0 auto; }
+  .card { background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); margin-bottom: 16px; }
+  h1 { color: #1a3c5e; margin-top: 0; }
+  h2 { color: #2a5d8f; margin-top: 28px; }
+  .badge { display: inline-block; padding: 4px 12px; border-radius: 12px; font-size: 0.85rem; font-weight: 600; color: #fff; }
+  .badge.LIVE { background: #16a34a; }
+  .badge.GITHUB { background: #64748b; }
+  .badge.NOT-DEPLOYED, .badge.EMPTY { background: #f59e0b; }
+  a { color: #1a73e8; }
+  .btn { display: inline-block; padding: 10px 18px; border-radius: 8px; background: #1a73e8; color: #fff; text-decoration: none; margin: 4px 8px 4px 0; }
+  .btn.secondary { background: #475569; }
+  ul { line-height: 1.8; }
+  .muted { color: #64748b; }
+  .back { margin-bottom: 16px; display: inline-block; }
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">&larr; Back to all projects</a>
+  <div class="card">
+    <h1>PicToID (picfinder) <span class="badge LIVE">LIVE</span></h1>
+    <p class="muted">API service (Python/FastAPI) &middot; Deployed from the local picfinder project</p>
+    <p>
+      <a class="btn" href="https://picfinder.onrender.com" target="_blank">Open live site</a>
+      <a class="btn secondary" href="https://github.com/MAGEGY/PicToID" target="_blank">GitHub repository</a>
+    </p>
+    <h2>What it does</h2>
+    <ul><li>PicToID is an image identification service.</li>
+    <li>You upload a picture and the API finds its ID - what the image shows.</li>
+    <li>It is a Python FastAPI service with image processing via Pillow and OpenCV.</li>
+    <li>It can describe images, detect faces, and read EXIF data.</li>
+    <li>It also handles temporary public hosting of uploaded images for URL-based engines.</li></ul>
+    <h2>Features</h2>
+    <ul><li>Image upload API (FastAPI + python-multipart)</li>
+    <li>Image description and identification engines</li>
+    <li>Face detection (OpenCV)</li>
+    <li>EXIF metadata reading</li>
+    <li>Temporary public hosting for uploaded images (uguu.se, tmpfiles.org, catbox.moe)</li>
+    <li>Static file serving</li></ul>
+    <h2>Tech stack</h2>
+    <p>Python 3.12, FastAPI, uvicorn, Pillow, OpenCV (headless), httpx, Render</p>
+    <h2>Notes</h2>
+    <p>The API root returns service info; check the repo README for endpoint details.</p>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gardening AI - Project Details</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f6f8; color: #222; margin: 0; padding: 24px; }
+  .container { max-width: 820px; margin: 0 auto; }
+  .card { background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); margin-bottom: 16px; }
+  h1 { color: #1a3c5e; margin-top: 0; }
+  h2 { color: #2a5d8f; margin-top: 28px; }
+  .badge { display: inline-block; padding: 4px 12px; border-radius: 12px; font-size: 0.85rem; font-weight: 600; color: #fff; }
+  .badge.LIVE { background: #16a34a; }
+  .badge.GITHUB { background: #64748b; }
+  .badge.NOT-DEPLOYED, .badge.EMPTY { background: #f59e0b; }
+  a { color: #1a73e8; }
+  .btn { display: inline-block; padding: 10px 18px; border-radius: 8px; background: #1a73e8; color: #fff; text-decoration: none; margin: 4px 8px 4px 0; }
+  .btn.secondary { background: #475569; }
+  ul { line-height: 1.8; }
+  .muted { color: #64748b; }
+  .back { margin-bottom: 16px; display: inline-block; }
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">&larr; Back to all projects</a>
+  <div class="card">
+    <h1>Gardening AI <span class="badge LIVE">LIVE</span></h1>
+    <p class="muted">Web app (React + Vite PWA) &middot; Original web project</p>
+    <p>
+      <a class="btn" href="https://magegy.github.io/gardeningAI/" target="_blank">Open live site</a>
+      <a class="btn secondary" href="https://github.com/MAGEGY/gardeningAI" target="_blank">GitHub repository</a>
+    </p>
+    <h2>What it does</h2>
+    <ul><li>Gardening AI helps you identify plants and keep them healthy.</li>
+    <li>You can identify a plant from a photo, diagnose diseases, and browse plant knowledge.</li>
+    <li>The app is built as an installable PWA with offline support.</li>
+    <li>It is built with React, Vite, and TypeScript.</li>
+    <li>The build is preconfigured for GitHub Pages with a web manifest.</li></ul>
+    <h2>Features</h2>
+    <ul><li>Plant identification from photos</li>
+    <li>Disease diagnosis</li>
+    <li>Plant knowledge base</li>
+    <li>Installable PWA with auto-updating service worker</li></ul>
+    <h2>Tech stack</h2>
+    <p>React 19, Vite 8, TypeScript, vite-plugin-pwa, GitHub Pages</p>
+    <h2>Notes</h2>
+    <p>The Vite config switches the base path automatically for Pages builds (GHPAGES env).</p>
+  </div>
+</div>
+</body>
+</html>

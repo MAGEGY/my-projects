@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PharmaPOS (pos / pos-egypt) - Project Details</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f6f8; color: #222; margin: 0; padding: 24px; }
+  .container { max-width: 820px; margin: 0 auto; }
+  .card { background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); margin-bottom: 16px; }
+  h1 { color: #1a3c5e; margin-top: 0; }
+  h2 { color: #2a5d8f; margin-top: 28px; }
+  .badge { display: inline-block; padding: 4px 12px; border-radius: 12px; font-size: 0.85rem; font-weight: 600; color: #fff; }
+  .badge.LIVE { background: #16a34a; }
+  .badge.GITHUB { background: #64748b; }
+  .badge.NOT-DEPLOYED, .badge.EMPTY { background: #f59e0b; }
+  a { color: #1a73e8; }
+  .btn { display: inline-block; padding: 10px 18px; border-radius: 8px; background: #1a73e8; color: #fff; text-decoration: none; margin: 4px 8px 4px 0; }
+  .btn.secondary { background: #475569; }
+  ul { line-height: 1.8; }
+  .muted { color: #64748b; }
+  .back { margin-bottom: 16px; display: inline-block; }
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">&larr; Back to all projects</a>
+  <div class="card">
+    <h1>PharmaPOS (pos / pos-egypt) <span class="badge NOT DEPLOYED">NOT DEPLOYED</span></h1>
+    <p class="muted">Web app (Node + Render blueprint) &middot; Local pos and pos-egypt projects (private repos)</p>
+    <p>
+      
+      <a class="btn secondary" href="https://github.com/MAGEGY/pos-egypt" target="_blank">GitHub repository</a>
+    </p>
+    <h2>What it does</h2>
+    <ul><li>PharmaPOS is a pharmacy point-of-sale web application.</li>
+    <li>Both the pos and pos-egypt folders contain the same render.yaml blueprint (service name: pharmapos).</li>
+    <li>The blueprint exists but the service was never deployed - pharmapos.onrender.com returns 404.</li>
+    <li>The repos are private on GitHub.</li>
+    <li>Deploying is one click via the Render blueprint in the repo.</li></ul>
+    <h2>Features</h2>
+    <ul><li>Pharmacy POS functionality</li>
+    <li>Render blueprint ready (pharmapos service + pharmapos-data)</li></ul>
+    <h2>Tech stack</h2>
+    <p>Node, Render blueprint (private repos)</p>
+    <h2>Notes</h2>
+    <p>To go live: Render dashboard -> New -> Blueprint -> select the pos-egypt repo.</p>
+  </div>
+</div>
+</body>
+</html>

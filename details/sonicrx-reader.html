@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SonicRx Reader (Web) - Project Details</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f6f8; color: #222; margin: 0; padding: 24px; }
+  .container { max-width: 820px; margin: 0 auto; }
+  .card { background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); margin-bottom: 16px; }
+  h1 { color: #1a3c5e; margin-top: 0; }
+  h2 { color: #2a5d8f; margin-top: 28px; }
+  .badge { display: inline-block; padding: 4px 12px; border-radius: 12px; font-size: 0.85rem; font-weight: 600; color: #fff; }
+  .badge.LIVE { background: #16a34a; }
+  .badge.GITHUB { background: #64748b; }
+  .badge.NOT-DEPLOYED, .badge.EMPTY { background: #f59e0b; }
+  a { color: #1a73e8; }
+  .btn { display: inline-block; padding: 10px 18px; border-radius: 8px; background: #1a73e8; color: #fff; text-decoration: none; margin: 4px 8px 4px 0; }
+  .btn.secondary { background: #475569; }
+  ul { line-height: 1.8; }
+  .muted { color: #64748b; }
+  .back { margin-bottom: 16px; display: inline-block; }
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">&larr; Back to all projects</a>
+  <div class="card">
+    <h1>SonicRx Reader (Web) <span class="badge LIVE">LIVE</span></h1>
+    <p class="muted">Web app (React + Vite + Tesseract.js) &middot; Web rewrite of the SonicRxReader Android app</p>
+    <p>
+      <a class="btn" href="https://magegy.github.io/sonicrx-reader/" target="_blank">Open live site</a>
+      <a class="btn secondary" href="https://github.com/MAGEGY/sonicrx-reader" target="_blank">GitHub repository</a>
+    </p>
+    <h2>What it does</h2>
+    <ul><li>SonicRx Reader scans medical prescriptions and turns them into structured medicine lists.</li>
+    <li>You capture the prescription with your camera or upload a photo, and OCR extracts the text.</li>
+    <li>The app recognizes medicine names, dosages, frequencies, and durations with a confidence score for each item.</li>
+    <li>It shows drug information, side effects, precautions, and interaction warnings between prescribed medicines.</li>
+    <li>You can correct misread names - the app learns from corrections and uses them in future scans - and every scan is saved with a printable report.</li></ul>
+    <h2>Features</h2>
+    <ul><li>Camera/upload OCR (English and Arabic)</li>
+    <li>Medicine recognition ported 1:1 from the Android logic (common-medicine dictionary, dosage/frequency/duration regex, confidence scoring)</li>
+    <li>Drug info cards: usage, dosage, side effects, precautions, contraindications</li>
+    <li>Interaction warnings between multiple medicines</li>
+    <li>Correction learning stored in localStorage</li>
+    <li>History with printable reports (print stylesheet included)</li></ul>
+    <h2>Tech stack</h2>
+    <p>React 19, Vite 8, TypeScript, Tesseract.js 5.1.0 (CDN), localStorage, GitHub Pages</p>
+    <h2>Notes</h2>
+    <p>Faithful port of the Android MedicineRecognizer.kt logic. Drug info uses the same stub data as the Android app (StubDrugInfoApi).</p>
+  </div>
+</div>
+</body>
+</html>

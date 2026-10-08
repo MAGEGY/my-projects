@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teacher Slides (AiTeacherAssistant) - Project Details</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f6f8; color: #222; margin: 0; padding: 24px; }
+  .container { max-width: 820px; margin: 0 auto; }
+  .card { background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); margin-bottom: 16px; }
+  h1 { color: #1a3c5e; margin-top: 0; }
+  h2 { color: #2a5d8f; margin-top: 28px; }
+  .badge { display: inline-block; padding: 4px 12px; border-radius: 12px; font-size: 0.85rem; font-weight: 600; color: #fff; }
+  .badge.LIVE { background: #16a34a; }
+  .badge.GITHUB { background: #64748b; }
+  .badge.NOT-DEPLOYED, .badge.EMPTY { background: #f59e0b; }
+  a { color: #1a73e8; }
+  .btn { display: inline-block; padding: 10px 18px; border-radius: 8px; background: #1a73e8; color: #fff; text-decoration: none; margin: 4px 8px 4px 0; }
+  .btn.secondary { background: #475569; }
+  ul { line-height: 1.8; }
+  .muted { color: #64748b; }
+  .back { margin-bottom: 16px; display: inline-block; }
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">&larr; Back to all projects</a>
+  <div class="card">
+    <h1>Teacher Slides (AiTeacherAssistant) <span class="badge LIVE">LIVE</span></h1>
+    <p class="muted">Web services (Node on Render) &middot; Deployed from the AiTeacherAssistant project</p>
+    <p>
+      <a class="btn" href="https://teacher-slides-web.onrender.com" target="_blank">Open live site</a>
+      <a class="btn secondary" href="https://github.com/MAGEGY/AiTeacherAssistant" target="_blank">GitHub repository</a>
+    </p>
+    <h2>What it does</h2>
+    <ul><li>Teacher Slides is the web part of the AI Teacher Assistant project.</li>
+    <li>It serves a slides web application for teachers.</li>
+    <li>A second service (teacher-slides-proxy) handles proxying.</li>
+    <li>Both run on Render free tier and wake up on first request.</li>
+    <li>The same repository also contains the Android version of the assistant.</li></ul>
+    <h2>Features</h2>
+    <ul><li>Slides web application</li>
+    <li>Proxy service for external resources</li>
+    <li>Render blueprint deployment (render.yaml in the repo)</li></ul>
+    <h2>Tech stack</h2>
+    <p>Node, Render, GitHub (private repo)</p>
+    <h2>Notes</h2>
+    <p>Live URLs: teacher-slides-web.onrender.com and teacher-slides-proxy.onrender.com.</p>
+  </div>
+</div>
+</body>
+</html>

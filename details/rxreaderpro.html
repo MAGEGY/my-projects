@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RxReaderPro (Web) - Project Details</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f6f8; color: #222; margin: 0; padding: 24px; }
+  .container { max-width: 820px; margin: 0 auto; }
+  .card { background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); margin-bottom: 16px; }
+  h1 { color: #1a3c5e; margin-top: 0; }
+  h2 { color: #2a5d8f; margin-top: 28px; }
+  .badge { display: inline-block; padding: 4px 12px; border-radius: 12px; font-size: 0.85rem; font-weight: 600; color: #fff; }
+  .badge.LIVE { background: #16a34a; }
+  .badge.GITHUB { background: #64748b; }
+  .badge.NOT-DEPLOYED, .badge.EMPTY { background: #f59e0b; }
+  a { color: #1a73e8; }
+  .btn { display: inline-block; padding: 10px 18px; border-radius: 8px; background: #1a73e8; color: #fff; text-decoration: none; margin: 4px 8px 4px 0; }
+  .btn.secondary { background: #475569; }
+  ul { line-height: 1.8; }
+  .muted { color: #64748b; }
+  .back { margin-bottom: 16px; display: inline-block; }
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">&larr; Back to all projects</a>
+  <div class="card">
+    <h1>RxReaderPro (Web) <span class="badge LIVE">LIVE</span></h1>
+    <p class="muted">Web app (React + Vite + Tesseract.js) &middot; Web rewrite of the RxReaderPro Android app</p>
+    <p>
+      <a class="btn" href="https://magegy.github.io/rxreaderpro/" target="_blank">Open live site</a>
+      <a class="btn secondary" href="https://github.com/MAGEGY/rxreaderpro" target="_blank">GitHub repository</a>
+    </p>
+    <h2>What it does</h2>
+    <ul><li>RxReaderPro is the most advanced prescription reader of the family.</li>
+    <li>It scans a prescription and extracts structured details: patient name, date of birth, ID, doctor, license, and date.</li>
+    <li>It pulls out each medication with strength, frequency, duration, and instructions using the same pattern engine as the Android app.</li>
+    <li>It then matches the text against a database of 7,700 medicines with a six-step confidence scoring system.</li>
+    <li>The final report shows everything with confidence bars and can be printed for the pharmacy.</li></ul>
+    <h2>Features</h2>
+    <ul><li>Structured extraction ported from TextPostProcessor.kt (patient, doctor, date, medications, instructions)</li>
+    <li>Six-step medicine matching ported from EnhancedMedicineMatcher.kt: exact name, generic, brand, medical context, fuzzy (Levenshtein), word-level, and dosage matching</li>
+    <li>7,700-medicine database bundled from the Android assets (medicine.csv)</li>
+    <li>Confidence bars with color coding</li>
+    <li>Printable report</li></ul>
+    <h2>Tech stack</h2>
+    <p>React 19, Vite 8, TypeScript, Tesseract.js 5.1.0 (CDN), bundled medicine.csv (541 KB), GitHub Pages</p>
+    <h2>Notes</h2>
+    <p>The Android app also has image preprocessing and a V7 Go API integration; those parts are native-specific and were not ported.</p>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Projects - MAGEGY</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f6f8; color: #222; margin: 0; padding: 24px; }
+  .container { max-width: 960px; margin: 0 auto; }
+  h1 { color: #1a3c5e; }
+  .updated { color: #888; }
+  .filters { margin: 16px 0; display: flex; gap: 8px; flex-wrap: wrap; }
+  .filter { padding: 8px 16px; border: 1px solid #2a5d8f; border-radius: 20px; background: #fff; color: #2a5d8f; cursor: pointer; font: inherit; }
+  .filter.active { background: #2a5d8f; color: #fff; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); gap: 16px; }
+  .card { background: #fff; border-radius: 12px; padding: 18px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+  .card h2 { margin: 0 0 4px; font-size: 1.15rem; color: #1a3c5e; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 10px; font-size: 0.75rem; font-weight: 600; color: #fff; margin-left: 6px; vertical-align: middle; }
+  .badge.LIVE { background: #16a34a; }
+  .badge.GITHUB { background: #64748b; }
+  .badge.NOT-DEPLOYED, .badge.EMPTY { background: #f59e0b; }
+  .type { color: #64748b; font-size: 0.85rem; margin-bottom: 10px; }
+  .hint { font-size: 0.95rem; line-height: 1.55; margin: 0 0 12px; }
+  .links { display: flex; gap: 8px; flex-wrap: wrap; }
+  .btn { display: inline-block; padding: 8px 14px; border-radius: 8px; background: #1a73e8; color: #fff; text-decoration: none; font-size: 0.9rem; }
+  .btn.secondary { background: #475569; }
+  .btn.details { background: #0e7490; }
+  a { color: #1a73e8; }
+  footer { text-align: center; color: #888; margin: 32px 0 8px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>My Projects</h1>
+  <p class="updated">Reference portfolio &middot; Last updated: 2026-10-07 &middot; 16 live URLs</p>
+  <div class="filters">
+    <button class="filter active" data-f="all">All</button>
+    <button class="filter" data-f="LIVE">Live</button>
+    <button class="filter" data-f="GITHUB">GitHub only</button>
+    <button class="filter" data-f="other">Not deployed</button>
+  </div>
+  <div class="grid" id="grid"></div>
+  <footer>All web apps auto-deploy from their GitHub repos. Data in the client-side apps stays in your browser.</footer>
+</div>
+<script>
+const PROJECTS = [
+  { slug: 'helpmeread-web', name: 'Help Me Read (Web)', type: 'Web app - React + Vite + Tesseract.js', status: 'LIVE', live: 'https://magegy.github.io/helpmeread-web/', repo: 'https://github.com/MAGEGY/helpmeread-web',
+    hint: 'A reading assistant for people who cannot read text - illiterate, visually impaired, or foreign-language speakers. Point your camera at text or upload a photo and OCR recognizes the words. The app reads the text aloud, and you can tap any line to hear just that line. It translates into 15 languages and reads the translation too. Every scan is saved in a history list to hear again later.' },
+  { slug: 'helpmeread', name: 'HelpMeRead (Android)', type: 'Android app - Kotlin + Compose', status: 'GITHUB', live: null, repo: 'https://github.com/MAGEGY/helpmeread',
+    hint: 'The original Android version of the reading assistant. It captures images with the camera and detects text using Google ML Kit OCR. The app reads the detected text aloud with adjustable volume and speed. It translates text into more than 15 supported languages. A web version is published and linked from this page.' },
+  { slug: 'sonicrx-reader', name: 'SonicRx Reader (Web)', type: 'Web app - React + Vite + Tesseract.js', status: 'LIVE', live: 'https://magegy.github.io/sonicrx-reader/', repo: 'https://github.com/MAGEGY/sonicrx-reader',
+    hint: 'Scans medical prescriptions and turns them into structured medicine lists. Capture the prescription or upload a photo, and OCR extracts the text. It recognizes medicine names, dosages, frequencies, and durations with a confidence score. It shows drug info, side effects, and interaction warnings. You can correct misread names - the app learns and uses corrections in future scans - and every scan gets a printable report.' },
+  { slug: 'nutriscan', name: 'NutriScan (Web)', type: 'Web app - React + Vite + Tesseract.js', status: 'LIVE', live: 'https://magegy.github.io/nutriscan/', repo: 'https://github.com/MAGEGY/nutriscan',
+    hint: 'Scans restaurant menus and tells you how healthy each item is for you. Photograph a menu and OCR pulls out the food items. Each item gets full nutrition numbers: calories, protein, carbs, fat, fiber, sugar, sodium. A 0-100 health score adapts to your goal - lose weight, gain muscle, low carb, or heart health. It detects common allergens, warns about your own, and keeps a scan history.' },
+  { slug: 'rxscan', name: 'RxScan (Web)', type: 'Web app - React + Vite + Tesseract.js', status: 'LIVE', live: 'https://magegy.github.io/rxscan/', repo: 'https://github.com/MAGEGY/rxscan',
+    hint: 'Reads prescriptions and finds the medicines in a local drug database. Scan the prescription and the recognized lines appear in an editable list. Fix any misread line and the app re-matches instantly. It fuzzy-matches against 1,071 Egyptian medicines by brand and composition. Each match shows brand, composition, and price in EGP, and the result can be printed.' },
+  { slug: 'personalfinance', name: 'Personal Finance (Web)', type: 'Web app - React + Vite + Tesseract.js', status: 'LIVE', live: 'https://magegy.github.io/personalfinance/', repo: 'https://github.com/MAGEGY/personalfinance',
+    hint: 'A complete money-tracking web app. The dashboard shows balance, monthly income and expenses, savings rate, and daily average spending. Smart insights warn about budgets, spending trends, and savings opportunities. You can add transactions, set category budgets with progress bars, and create savings goals. A bill scanner extracts the total, date, and merchant from a photo to create an expense automatically.' },
+  { slug: 'rxreaderpro', name: 'RxReaderPro (Web)', type: 'Web app - React + Vite + Tesseract.js', status: 'LIVE', live: 'https://magegy.github.io/rxreaderpro/', repo: 'https://github.com/MAGEGY/rxreaderpro',
+    hint: 'The most advanced prescription reader of the family. It extracts structured details: patient, date of birth, ID, doctor, license, and date. It pulls out each medication with strength, frequency, duration, and instructions. It matches the text against 7,700 medicines with a six-step confidence system. The final report shows confidence bars and prints for the pharmacy.' },
+  { slug: 'mediconnect', name: 'MediConnect (Web)', type: 'Web app - Expo static export', status: 'LIVE', live: 'https://magegy.github.io/mediconnect/', repo: 'https://github.com/MAGEGY/mediconnect',
+    hint: 'A medical app with three roles: doctor, patient, and pharmacist. Doctors manage patients and prescriptions, patients view medications and lifestyle plans, pharmacists dispense and track inventory. The web version is a static export of the Expo app - no server needed. It includes medicine scanning screens and a built-in medicine database. The Android app remains the full version with camera and biometrics.' },
+  { slug: 'medrecord', name: 'MedRecord (Web)', type: 'Web app - Expo static export', status: 'LIVE', live: 'https://magegy.github.io/medrecord/', repo: 'https://github.com/MAGEGY/medrecord',
+    hint: 'The second variant of the MediConnect family, focused on medical records. It has doctor, patient, pharmacist, and OCR scanner sections. Patients keep medication lists with allergy and lifestyle inputs, pharmacists handle dispensing and inventory. The web version is a static Expo export running fully in the browser. It also generates QR codes for sharing records.' },
+  { slug: 'youg8-web', name: 'YouG8 Travel Assistant', type: 'Web app - Expo static export PWA', status: 'LIVE', live: 'https://magegy.github.io/youg8-web/', repo: 'https://github.com/MAGEGY/youg8-web',
+    hint: 'A travel assistant PWA covering the whole journey. It includes flight info, currency tools, destination and embassy finders, and an expense tracker. There are dedicated pages for location, barcode scanning, and exploration. The site is a static export that works in the browser. A separate privacy policy page is published for it.' },
+  { slug: 'gardeningai', name: 'Gardening AI', type: 'Web app - React + Vite PWA', status: 'LIVE', live: 'https://magegy.github.io/gardeningAI/', repo: 'https://github.com/MAGEGY/gardeningAI',
+    hint: 'Helps you identify plants and keep them healthy. Identify a plant from a photo, diagnose diseases, and browse plant knowledge. The app is an installable PWA with offline support. Built with React, Vite, and TypeScript. The build is preconfigured for GitHub Pages with a web manifest.' },
+  { slug: 'fill-excel', name: 'fill_excel', type: 'Static web tool', status: 'LIVE', live: 'https://magegy.github.io/fill_excel/', repo: 'https://github.com/MAGEGY/fill_excel',
+    hint: 'Fills Excel sheets from scanned pictures. Upload a photo of a page and OCR reads the content in the browser. It builds the Excel file client-side with ExcelJS and JSZip. No server is involved - everything runs in the browser. It was the original proof that Tesseract.js works well in this project family.' },
+  { slug: 'pharmascan', name: 'Pharma-Scan', type: 'Full-stack - Express + SQLite + Expo client', status: 'LIVE', live: 'https://pharmascan.onrender.com', repo: 'https://github.com/MAGEGY/pharma-scan',
+    hint: 'A full pharmacy management system with a real backend. It has user accounts with authentication, an Express API, and a SQLite database. The frontend is an Expo app exported to static files and served by the same server. It includes advanced features like backup and sync. Runs on Render free tier - the database resets on redeploy.' },
+  { slug: 'rxreader', name: 'RxReader (AI)', type: 'Full-stack - Next.js + Firebase + Genkit AI', status: 'LIVE', live: 'https://rxreader-350m.onrender.com', repo: 'https://github.com/MAGEGY/rxreader',
+    hint: 'A prescription analyzer powered by Google Gemini AI. Upload a prescription photo and AI-enhanced OCR reads it. Genkit AI flows extract and verify medication details. Built with Next.js 16, Firebase, and shadcn/ui. Runs on Render (service auto-renamed to rxreader-350m).' },
+  { slug: 'picfinder', name: 'PicToID (picfinder)', type: 'API service - Python/FastAPI', status: 'LIVE', live: 'https://picfinder.onrender.com', repo: 'https://github.com/MAGEGY/PicToID',
+    hint: 'An image identification service. Upload a picture and the API finds its ID - what the image shows. It is a Python FastAPI service with Pillow and OpenCV. It can describe images, detect faces, and read EXIF data. It also hosts uploaded images temporarily for URL-based engines.' },
+  { slug: 'teacher-slides', name: 'Teacher Slides (AiTeacherAssistant)', type: 'Web services - Node on Render', status: 'LIVE', live: 'https://teacher-slides-web.onrender.com', repo: 'https://github.com/MAGEGY/AiTeacherAssistant',
+    hint: 'The web part of the AI Teacher Assistant project. It serves a slides web application for teachers. A second service (teacher-slides-proxy) handles proxying. Both run on Render free tier and wake up on first request. The same repo also contains the Android version.' },
+  { slug: 'youg8-privacy', name: 'YouG8 Privacy Policy', type: 'Static page', status: 'GITHUB', live: null, repo: 'https://github.com/MAGEGY/youg8-privacy',
+    hint: 'Hosts the privacy policy page for the YouG8 Travel Assistant. It is a simple static HTML page. It is referenced from the YouG8 app store listings. It is on GitHub but not served via Pages. The main YouG8 app is linked from this page.' },
+  { slug: 'pos-egypt', name: 'PharmaPOS (pos / pos-egypt)', type: 'Web app - Node + Render blueprint', status: 'NOT-DEPLOYED', live: null, repo: 'https://github.com/MAGEGY/pos-egypt',
+    hint: 'A pharmacy point-of-sale web application. Both local folders contain the same Render blueprint (service: pharmapos). The blueprint exists but was never deployed - the URL returns 404. The repos are private on GitHub. Deploying is one click via the Render blueprint.' },
+  { slug: 'drugdose', name: 'DrugDose', type: 'Android/Expo scaffold', status: 'EMPTY', live: null, repo: null,
+    hint: 'An Expo project scaffold that was never filled with app code. The screens and context folders are empty. There is nothing to publish yet. The Expo setup with web support is ready for development. Once it has screens, it can be exported to web like the other Expo apps.' },
+]
+
+const grid = document.getElementById('grid')
+function render(filter) {
+  grid.innerHTML = PROJECTS
+    .filter((p) => filter === 'all' || (filter === 'other' ? p.status !== 'LIVE' && p.status !== 'GITHUB' : p.status === filter))
+    .map((p) => `
+    <div class="card">
+      <h2>${p.name}<span class="badge ${p.status}">${p.status === 'NOT-DEPLOYED' ? 'NOT DEPLOYED' : p.status}</span></h2>
+      <div class="type">${p.type}</div>
+      <p class="hint">${p.hint}</p>
+      <div class="links">
+        ${p.live ? `<a class="btn" href="${p.live}" target="_blank">Open live</a>` : ''}
+        ${p.repo ? `<a class="btn secondary" href="${p.repo}" target="_blank">GitHub</a>` : ''}
+        <a class="btn details" href="details/${p.slug}.html" target="_blank">Details</a>
+      </div>
+    </div>`)
+    .join('')
+}
+document.querySelectorAll('.filter').forEach((b) => b.addEventListener('click', () => {
+  document.querySelectorAll('.filter').forEach((x) => x.classList.remove('active'))
+  b.classList.add('active')
+  render(b.dataset.f)
+}))
+render('all')
+</script>
+</body>
+</html>

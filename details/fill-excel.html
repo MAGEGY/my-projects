@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>fill_excel - Project Details</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f6f8; color: #222; margin: 0; padding: 24px; }
+  .container { max-width: 820px; margin: 0 auto; }
+  .card { background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); margin-bottom: 16px; }
+  h1 { color: #1a3c5e; margin-top: 0; }
+  h2 { color: #2a5d8f; margin-top: 28px; }
+  .badge { display: inline-block; padding: 4px 12px; border-radius: 12px; font-size: 0.85rem; font-weight: 600; color: #fff; }
+  .badge.LIVE { background: #16a34a; }
+  .badge.GITHUB { background: #64748b; }
+  .badge.NOT-DEPLOYED, .badge.EMPTY { background: #f59e0b; }
+  a { color: #1a73e8; }
+  .btn { display: inline-block; padding: 10px 18px; border-radius: 8px; background: #1a73e8; color: #fff; text-decoration: none; margin: 4px 8px 4px 0; }
+  .btn.secondary { background: #475569; }
+  ul { line-height: 1.8; }
+  .muted { color: #64748b; }
+  .back { margin-bottom: 16px; display: inline-block; }
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">&larr; Back to all projects</a>
+  <div class="card">
+    <h1>fill_excel <span class="badge LIVE">LIVE</span></h1>
+    <p class="muted">Static web tool &middot; Original web project</p>
+    <p>
+      <a class="btn" href="https://magegy.github.io/fill_excel/" target="_blank">Open live site</a>
+      <a class="btn secondary" href="https://github.com/MAGEGY/fill_excel" target="_blank">GitHub repository</a>
+    </p>
+    <h2>What it does</h2>
+    <ul><li>fill_excel fills Excel sheets from scanned pictures.</li>
+    <li>You upload a photo of a page, and OCR reads the content in the browser.</li>
+    <li>It builds the Excel file client-side with ExcelJS and JSZip.</li>
+    <li>No server is involved - everything runs in the browser.</li>
+    <li>It was the original proof that Tesseract.js works well in this project family.</li></ul>
+    <h2>Features</h2>
+    <ul><li>Image upload with in-browser OCR (Tesseract.js)</li>
+    <li>Excel generation with ExcelJS</li>
+    <li>Fully client-side - no backend</li></ul>
+    <h2>Tech stack</h2>
+    <p>Vanilla HTML/JS, Tesseract.js, ExcelJS, JSZip (all via CDN), GitHub Pages</p>
+    <h2>Notes</h2>
+    <p>Served directly from the repository root.</p>
+  </div>
+</div>
+</body>
+</html>
