@@ -32,7 +32,7 @@
 <body>
 <div class="container">
   <h1>My Projects</h1>
-  <p class="updated">Reference portfolio &middot; Last updated: 2026-10-07 &middot; 16 live URLs</p>
+  <p class="updated">Reference portfolio &middot; Last updated: 2026-10-07 &middot; 19 live URLs</p>
   <div class="filters">
     <button class="filter active" data-f="all">All</button>
     <button class="filter" data-f="LIVE">Live</button>
@@ -78,8 +78,8 @@ const PROJECTS = [
     hint: 'The web part of the AI Teacher Assistant project. It serves a slides web application for teachers. A second service (teacher-slides-proxy) handles proxying. Both run on Render free tier and wake up on first request. The same repo also contains the Android version.' },
   { slug: 'youg8-privacy', name: 'YouG8 Privacy Policy', type: 'Static page', status: 'GITHUB', live: null, repo: 'https://github.com/MAGEGY/youg8-privacy',
     hint: 'Hosts the privacy policy page for the YouG8 Travel Assistant. It is a simple static HTML page. It is referenced from the YouG8 app store listings. It is on GitHub but not served via Pages. The main YouG8 app is linked from this page.' },
-  { slug: 'pos-egypt', name: 'PharmaPOS (pos / pos-egypt)', type: 'Web app - Node + Render blueprint', status: 'NOT-DEPLOYED', live: null, repo: 'https://github.com/MAGEGY/pos-egypt',
-    hint: 'A pharmacy point-of-sale web application. Both local folders contain the same Render blueprint (service: pharmapos). The blueprint exists but was never deployed - the URL returns 404. The repos are private on GitHub. Deploying is one click via the Render blueprint.' },
+  { slug: 'pos-egypt', name: 'PharmaPOS (pos / pos-egypt)', type: 'Web app - Node + Render blueprint', status: 'LIVE', live: 'https://pharmapos-6vfx.onrender.com', repo: 'https://github.com/MAGEGY/pos-egypt',
+    hint: 'A pharmacy point-of-sale web application. It is deployed on Render in two instances - one from the pos project and one from pos-egypt. Render auto-suffixed the service names, so the URLs are pharmapos-6vfx and pharmapos-61wk. Both projects include a render.yaml blueprint. The repos are private on GitHub.' },
   { slug: 'drugdose', name: 'DrugDose', type: 'Web app - Expo + expo-router + Paper', status: 'LIVE', live: 'https://magegy.github.io/DrugDose/', repo: 'https://github.com/MAGEGY/DrugDose',
     hint: 'A pediatric drug dose calculator. Pick a drug, enter the child\'s weight, and it computes the dose per administration and the daily total. Every result is checked against single-dose and daily maximums with warnings. It includes a searchable reference of 1,071 Egyptian medicines with EGP prices, plus a dose schedule generator. Calculations can be saved to a history list.' },
 ]

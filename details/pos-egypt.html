@@ -26,25 +26,26 @@
 <div class="container">
   <a class="back" href="../index.html">&larr; Back to all projects</a>
   <div class="card">
-    <h1>PharmaPOS (pos / pos-egypt) <span class="badge NOT DEPLOYED">NOT DEPLOYED</span></h1>
+    <h1>PharmaPOS (pos / pos-egypt) <span class="badge LIVE">LIVE</span></h1>
     <p class="muted">Web app (Node + Render blueprint) &middot; Local pos and pos-egypt projects (private repos)</p>
     <p>
-      
+      <a class="btn" href="https://pharmapos-6vfx.onrender.com" target="_blank">Open live site</a>
       <a class="btn secondary" href="https://github.com/MAGEGY/pos-egypt" target="_blank">GitHub repository</a>
     </p>
     <h2>What it does</h2>
     <ul><li>PharmaPOS is a pharmacy point-of-sale web application.</li>
-    <li>Both the pos and pos-egypt folders contain the same render.yaml blueprint (service name: pharmapos).</li>
-    <li>The blueprint exists but the service was never deployed - pharmapos.onrender.com returns 404.</li>
-    <li>The repos are private on GitHub.</li>
-    <li>Deploying is one click via the Render blueprint in the repo.</li></ul>
+    <li>It is deployed on Render in two instances - one from the pos project and one from pos-egypt.</li>
+    <li>Render auto-suffixed the service names, so the URLs are pharmapos-6vfx and pharmapos-61wk.</li>
+    <li>Both projects include a render.yaml blueprint (service name: pharmapos).</li>
+    <li>The repos are private on GitHub.</li></ul>
     <h2>Features</h2>
     <ul><li>Pharmacy POS functionality</li>
+    <li>Two Render deployments (pos and pos-egypt variants)</li>
     <li>Render blueprint ready (pharmapos service + pharmapos-data)</li></ul>
     <h2>Tech stack</h2>
     <p>Node, Render blueprint (private repos)</p>
     <h2>Notes</h2>
-    <p>To go live: Render dashboard -> New -> Blueprint -> select the pos-egypt repo.</p>
+    <p>Live URLs: pharmapos-6vfx.onrender.com and pharmapos-61wk.onrender.com.</p>
   </div>
 </div>
 </body>
