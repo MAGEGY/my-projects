@@ -26,10 +26,10 @@
 <div class="container">
   <a class="back" href="../index.html">&larr; Back to all projects</a>
   <div class="card">
-    <h1>PicToID (picfinder) <span class="badge LIVE">LIVE</span></h1>
-    <p class="muted">API service (Python/FastAPI) &middot; Deployed from the local picfinder project</p>
+    <h1>PicToID (picfinder) <span class="badge NOT-DEPLOYED">NOT-DEPLOYED</span></h1>
+    <p class="muted">API service (Python/FastAPI) &middot; Local picfinder project - blueprint ready, not deployed yet</p>
     <p>
-      <a class="btn" href="https://picfinder.onrender.com" target="_blank">Open live site</a>
+      
       <a class="btn secondary" href="https://github.com/MAGEGY/PicToID" target="_blank">GitHub repository</a>
     </p>
     <h2>What it does</h2>
@@ -37,7 +37,7 @@
     <li>You upload a picture and the API finds its ID - what the image shows.</li>
     <li>It is a Python FastAPI service with image processing via Pillow and OpenCV.</li>
     <li>It can describe images, detect faces, and read EXIF data.</li>
-    <li>It also handles temporary public hosting of uploaded images for URL-based engines.</li></ul>
+    <li>A Render blueprint is ready in the repo - the plain picfinder.onrender.com subdomain belongs to someone else, so the deploy will be auto-named picfinder-xxxx.</li></ul>
     <h2>Features</h2>
     <ul><li>Image upload API (FastAPI + python-multipart)</li>
     <li>Image description and identification engines</li>
@@ -46,9 +46,9 @@
     <li>Temporary public hosting for uploaded images (uguu.se, tmpfiles.org, catbox.moe)</li>
     <li>Static file serving</li></ul>
     <h2>Tech stack</h2>
-    <p>Python 3.12, FastAPI, uvicorn, Pillow, OpenCV (headless), httpx, Render</p>
+    <p>Python 3.12, FastAPI, uvicorn, Pillow, OpenCV (headless), httpx, Render blueprint</p>
     <h2>Notes</h2>
-    <p>The API root returns service info; check the repo README for endpoint details.</p>
+    <p>To deploy: Render dashboard -> New -> Blueprint -> select the PicToID repo. The service will be auto-named picfinder-xxxx because picfinder.onrender.com is taken.</p>
   </div>
 </div>
 </body>

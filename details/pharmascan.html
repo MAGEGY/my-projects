@@ -26,28 +26,28 @@
 <div class="container">
   <a class="back" href="../index.html">&larr; Back to all projects</a>
   <div class="card">
-    <h1>Pharma-Scan <span class="badge LIVE">LIVE</span></h1>
-    <p class="muted">Full-stack web app (Express + SQLite + Expo static client) &middot; Deployed from the local Pharma-Scan project</p>
+    <h1>Pharma-Scan <span class="badge NOT-DEPLOYED">NOT-DEPLOYED</span></h1>
+    <p class="muted">Full-stack web app (Express + PostgreSQL + Expo static client) &middot; Local Pharma-Scan project - blueprint ready, not deployed yet</p>
     <p>
-      <a class="btn" href="https://pharmascan.onrender.com" target="_blank">Open live site</a>
+      
       <a class="btn secondary" href="https://github.com/MAGEGY/pharma-scan" target="_blank">GitHub repository</a>
     </p>
     <h2>What it does</h2>
     <ul><li>Pharma-Scan is a full pharmacy management system with a real backend.</li>
-    <li>It has user accounts with authentication, an Express API, and a SQLite database.</li>
+    <li>It has user accounts with authentication, an Express API, and a PostgreSQL database via Drizzle ORM.</li>
     <li>The frontend is an Expo app exported to static files and served by the same server.</li>
     <li>It includes advanced pharmacy features like backup and sync.</li>
-    <li>It runs on Render free tier - note the database resets on redeploy.</li></ul>
+    <li>A Render blueprint is ready - it needs a PostgreSQL database (Render Postgres or Neon free tier) set as DATABASE_URL.</li></ul>
     <h2>Features</h2>
     <ul><li>Authentication (JWT, bcrypt)</li>
     <li>Express REST API with Drizzle ORM</li>
-    <li>SQLite database (better-sqlite3)</li>
+    <li>PostgreSQL database (postgres.js driver)</li>
     <li>Expo static client served by the server</li>
     <li>Advanced features: backup, sync, system management</li></ul>
     <h2>Tech stack</h2>
-    <p>Node 20, Express, TypeScript, esbuild, Drizzle ORM, SQLite, Expo static export, Render</p>
+    <p>Node 20, Express, TypeScript, esbuild, Drizzle ORM, PostgreSQL, Expo static export, Render blueprint</p>
     <h2>Notes</h2>
-    <p>SQLite is ephemeral on the Render free tier - data resets on every redeploy. For persistent data, add a Render disk (paid) or switch to Postgres.</p>
+    <p>Requires DATABASE_URL pointing to a hosted Postgres (Render Postgres or Neon free tier). Note: pharmascan.onrender.com belongs to a different app (MedPrice.ai) - the deploy will be auto-named pharmascan-xxxx.</p>
   </div>
 </div>
 </body>
