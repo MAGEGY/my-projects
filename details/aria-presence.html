@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARIA Presence (Friends) - Project Details</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f6f8; color: #222; margin: 0; padding: 24px; }
+  .container { max-width: 820px; margin: 0 auto; }
+  .card { background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); margin-bottom: 16px; }
+  h1 { color: #1a3c5e; margin-top: 0; }
+  h2 { color: #2a5d8f; margin-top: 28px; }
+  .badge { display: inline-block; padding: 4px 12px; border-radius: 12px; font-size: 0.85rem; font-weight: 600; color: #fff; }
+  .badge.LIVE { background: #16a34a; }
+  .badge.GITHUB { background: #64748b; }
+  .badge.NOT-DEPLOYED, .badge.EMPTY { background: #f59e0b; }
+  a { color: #1a73e8; }
+  .btn { display: inline-block; padding: 10px 18px; border-radius: 8px; background: #1a73e8; color: #fff; text-decoration: none; margin: 4px 8px 4px 0; }
+  .btn.secondary { background: #475569; }
+  ul { line-height: 1.8; }
+  .muted { color: #64748b; }
+  .back { margin-bottom: 16px; display: inline-block; }
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">&larr; Back to all projects</a>
+  <div class="card">
+    <h1>ARIA Presence (Friends) <span class="badge LIVE">LIVE</span></h1>
+    <p class="muted">System (web app + API + vector DB on Render) &middot; Friends project - deployed from Render blueprints</p>
+    <p>
+      <a class="btn" href="https://aria-web-f6uu.onrender.com" target="_blank">Open live site</a>
+      
+    </p>
+    <h2>What it does</h2>
+    <ul><li>ARIA is a presence/prompt-sharing system built around a conversational assistant.</li>
+    <li>It has three deployed parts on Render: the web app, a Python presence API, and a Qdrant vector database.</li>
+    <li>The web app is the user-facing interface; the API handles presence and prompts; Qdrant stores embeddings.</li>
+    <li>The services were deployed 25 days ago and stay up on Render.</li>
+    <li>The source lives in the local Friends project (Friends/Friends/aria-presence) with its render.yaml blueprint.</li></ul>
+    <h2>Features</h2>
+    <ul><li>Web app (static site on Render)</li>
+    <li>Presence API (Python 3 on Render)</li>
+    <li>Qdrant vector database (Docker on Render)</li></ul>
+    <h2>Tech stack</h2>
+    <p>Render blueprints, Python, Qdrant, Docker</p>
+    <h2>Notes</h2>
+    <p>Live URLs: aria-web-f6uu.onrender.com, aria-qdrant.onrender.com, and the presence API (auto-suffixed URL).</p>
+  </div>
+</div>
+</body>
+</html>
